@@ -1,13 +1,17 @@
 # COLORS Lab (for COP 4331C)
 
 Colors web application based off of the assignment specifications. It consists of a basic login page alongside a main page which allows users to input color names and upload them to their profile, then be able to search for them via the search box.
+
 To use the app, visit my website http://steffpcop4331.com or follow the setup instructions to use it on a remote host.
+
 The program was built within a LAMP stack droplet on a Apache environment hosted on DigitalOcean alongside an instance of MySQL running. 
 
 The setup process can be done via an ssh client such as Putty (www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), though ssh file management programs such as Filezilla (filezilla-project.org/download.php?type=client#close) are also helpful.
 
 1. Register a LAMP droplet on DigitalOcean via https://marketplace.digitalocean.com/apps/lamp, and register a root password within the creation page.
+   
 2. Log on to the root with the credentials via the DigitalOcean web console or Putty. Then, use Filezilla to find the MySQL password (Directory location C:/root/).
+   
 3. Use command 
 ```bash
 mysql -u root -p 
@@ -24,14 +28,13 @@ CREATE TABLE `COP4331`.`Users` ( `ID` INT NOT NULL AUTO_INCREMENT , `FirstName` 
 
 insert into Users (FirstName,LastName,Login,Password) VALUES ('Sam','Hill','SamH','0cbc6611f5540bd0809a388dc95a615b');
 ```
-The insert function can use any data within the same format.
 
 ```mysql
 CREATE TABLE `COP4331`.`Colors` ( `ID` INT NOT NULL AUTO_INCREMENT , `Name` VARCHAR(50) NOT NULL DEFAULT '' , `UserID` INT NOT NULL DEFAULT '0' , PRIMARY KEY (`ID`)) ENGINE = InnoDB;
 
 insert into Colors (Name,UserID) VALUES ('Blue',1);
 ```
-The insert function can use any data within the same format.
+The insert functions can use any data within the same format.
 
 
 4. Run the following command 
